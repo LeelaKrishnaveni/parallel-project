@@ -1,0 +1,29 @@
+<div class="alert alert-success" *ngIf='message'>
+    {{ message }}>
+</div>
+<div class="col-md-4 offset-4 mt-4">
+    <h4 class="text-center">Delete Book</h4>
+    <table class="table table-hover table-bordered">
+        <thead class="table-hover">
+            <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Publisher</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let bookDetails of books'>
+                <td>{{bookDetails.bookId}}</td>
+                <td>{{bookDetails.bookName}}</td>
+                <td>{{bookDetails.authorName}}</td>
+                <td>{{bookDetails.bookCategory}}</td>
+                <td>{{bookDetails.publisherName}}</td>
+                <td><button type="submit" class="btn btn-outline-primary " (click)='deleteBook(bookDetails)'>Delete</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,29 @@
+<form class="form-inline my-2 my-lg-0" style="float: right;">
+    <input class="form-control mr-sm-2" [(ngModel)]="bookName" name="bookName" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)='getBooksByName(bookName)'>Search</button>
+</form>
+<br>
+<div class="container mt-4">
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Publisher</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let bookdetails of books'>
+                <td>{{bookdetails.bookId}}</td>
+                <td>{{bookdetails.bookName}}</td>
+                <td>{{bookdetails.authorName}}</td>
+                <td>{{bookdetails.bookCategory}}</td>
+                <td>{{bookdetails.publisherName}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
